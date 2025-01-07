@@ -1,0 +1,7 @@
+- [HealthX-Lab/MedCLIP-SAM](https://github.com/HealthX-Lab/MedCLIP-SAM)
+- [HealthX-Lab/MedCLIP-SAMv2](https://github.com/HealthX-Lab/MedCLIP-SAMv2)
+- [BiMediX2](https://github.com/mbzuai-oryx/BiMediX2)
+- [microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224](https://huggingface.co/microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224)
+- [Microsoft/LLaVA-Med](https://github.com/microsoft/LLaVA-Med?tab=readme-ov-file)
+- [bioCaption](https://github.com/nlpaueb/bioCaption?form=MG0AV3)
+- [MedCLIP](https://github.com/Mauville/MedCLIP)
