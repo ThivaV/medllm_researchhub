@@ -11,3 +11,5 @@ torch
 transformers 
 open_clip_torch
 sentencepiece
+langchain-community
+faiss-cpu
