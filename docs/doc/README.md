@@ -5,3 +5,6 @@
 - [Microsoft/LLaVA-Med](https://github.com/microsoft/LLaVA-Med?tab=readme-ov-file)
 - [bioCaption](https://github.com/nlpaueb/bioCaption?form=MG0AV3)
 - [MedCLIP](https://github.com/Mauville/MedCLIP)
+- [Salesforce/blip-image-captioning-base](https://huggingface.co/Salesforce/blip-image-captioning-base)
+- [Nihirc/Prompt2MedImage](https://huggingface.co/Nihirc/Prompt2MedImage)
+- [HF: Image-to-Text Task](https://huggingface.co/tasks/image-to-text?form=MG0AV3)
