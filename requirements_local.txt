@@ -8,7 +8,7 @@ seaborn
 python-dotenv
 python-box
 torch
-transformers 
+transformers==4.43.1 
 open_clip_torch
 sentencepiece
 langchain-community
