@@ -10,3 +10,4 @@
 - [HF: Image-to-Text Task](https://huggingface.co/tasks/image-to-text?form=MG0AV3)
 - [Extending healthcare access to underserved communities with AI](https://ai.meta.com/blog/bimedix-built-with-llama/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=builtwithllama)
 - [BIMEDIX2 : BIO-MEDICAL EXPERT LMM FOR DIVERSE MEDICAL MODALITIES](https://arxiv.org/pdf/2412.07769)
+- [ContactDoctor/Bio-Medical-MultiModal-Llama-3-8B-V1](https://huggingface.co/ContactDoctor/Bio-Medical-MultiModal-Llama-3-8B-V1)
