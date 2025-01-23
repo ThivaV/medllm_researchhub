@@ -1,38 +1,11 @@
 ipykernel
 ipywidgets
-
-# tqdm
-# pandas
-# numpy
-# matplotlib
-# seaborn
-# python-dotenv
-# python-box
-
-# # torchvision
-# # open_clip_torch
-# # sentencepiece
-# # langchain-community
-# # faiss-cpu
-
-# torch
-# transformers
-# accelerate
-# bitsandbytes
-# llava-torch
-
-# ----------------------------
-# torch==2.1
-# transformers==4.34.1
-# accelerate==0.23.0
-# bitsandbytes==0.41.1
-# llava-torch==1.1.1
-
-torch==2.0.1
-torchvision==0.15.2
-transformers==4.31.0
-accelerate==0.21.0
-bitsandbytes==0.41.0
-llava-torch==1.1.1
-
+tqdm
+pandas
+numpy
+matplotlib
+seaborn
+python-dotenv
+python-box
 groq
+streamlit
