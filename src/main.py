@@ -1,6 +1,10 @@
 import streamlit as st  # type: ignore
-import tempfile
-from PIL import Image
+import random
+import time
+# import tempfile
+# from PIL import Image
+
+from src.helper import upload_files
 
 def initialize():
     """BioMED ⚕️ VisionLM AI Tool initialization"""
@@ -9,30 +13,47 @@ def initialize():
         "🚨 This application is designed as a comprehensive AI tool for medical analysis, leveraging advanced multimodal capabilities to assist healthcare professionals and potentially extend access to underserved communities."
     )
 
-    # File uploader for both images and PDFs
-    uploaded_files = st.file_uploader(
-        "Choose files...",
-        type=["jpg", "png", "jpeg", "pdf"],
-        accept_multiple_files=True,
+    col1, col2 = st.columns([1, 3], vertical_alignment="top", border=False)
+
+    with col1:
+        reports = upload_files()
+        st.write("Uploaded files: ", reports)
+
+    with col2:
+        msg = st.container(height=800, border=True)
+
+        # Initialize chat history
+        if "messages" not in st.session_state:
+            st.session_state.messages = []
+
+        # Display chat messages from history on app rerun
+        for message in st.session_state.messages:
+            with msg.chat_message(message["role"]):
+                msg.markdown(message["content"])
+
+        query = st.chat_input("Say something")
+        if query:
+            # Display user message in chat message container
+            with msg.chat_message("user"):
+                msg.markdown(query)
+
+            # Display assistant response in chat message container
+            with msg.chat_message("assistant"):
+                response = msg.write_stream(response_generator())
+
+            # Add assistant response to chat history
+            st.session_state.messages.append({"role": "assistant", "content": response})
+
+# Streamed response emulator
+def response_generator():
+    response = random.choice(
+        [
+            "Hello there! How can I assist you today?",
+            "Hi, human! Is there anything I can help you with?",
+            "Do you need help?",
+        ]
     )
 
-    if uploaded_files is not None:
-        # Create a temporary file
-        with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-
-            for uploaded_file in uploaded_files:
-                # Write the uploaded file's contents to the temporary file
-                temp_file.write(uploaded_file.getbuffer())
-
-                # Get the temporary file path
-                temp_file_path = temp_file.name
-                st.write(f"File saved temporarily at: {temp_file_path}")
-
-                # If the file is an image, display it
-                if uploaded_file.type in ["image/jpeg", "image/png", "image/jpg"]:
-                    image = Image.open(temp_file_path)
-                    st.image(image, caption='Uploaded Image', width=500)
-                    
-                # If the file is a PDF, display a message (you can implement further handling if needed)
-                elif uploaded_file.type == "application/pdf":
-                    st.write("Uploaded PDF file.")
+    for word in response.split():
+        yield word + " "
+        time.sleep(0.05)
