@@ -1,10 +1,11 @@
-import streamlit as st  # type: ignore
+import streamlit as st
 import random
 import time
 # import tempfile
 # from PIL import Image
 
 from src.helper import upload_files
+
 
 def initialize():
     """BioMED ⚕️ VisionLM AI Tool initialization"""
@@ -13,11 +14,15 @@ def initialize():
         "🚨 This application is designed as a comprehensive AI tool for medical analysis, leveraging advanced multimodal capabilities to assist healthcare professionals and potentially extend access to underserved communities."
     )
 
+    # Initialize session states
+    if "reports" not in st.session_state:
+        st.session_state.reports = []
+
     col1, col2 = st.columns([1, 3], vertical_alignment="top", border=False)
 
     with col1:
-        reports = upload_files()
-        st.write("Uploaded files: ", reports)
+        upload_files()
+        st.write(st.session_state.reports)
 
     with col2:
         msg = st.container(height=800, border=True)
@@ -43,6 +48,7 @@ def initialize():
 
             # Add assistant response to chat history
             st.session_state.messages.append({"role": "assistant", "content": response})
+
 
 # Streamed response emulator
 def response_generator():
