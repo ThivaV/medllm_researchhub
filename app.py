@@ -125,7 +125,7 @@ def chat(message, chat_history, api_key):
 
 
 if __name__ == "__main__":
-    with gr.Blocks() as demo:
+    with gr.Blocks() as app:
         with gr.Accordion("Enter your Groq key!", open=False):
             api_key = gr.Textbox(
                 label="GROQ API Key",
@@ -145,7 +145,8 @@ if __name__ == "__main__":
                 additional_inputs=api_key,
                 type="messages",
                 multimodal=True,
+                save_history=True,
                 examples=[],
             )
 
-    demo.launch(share=True)
+    app.launch(share=True)
