@@ -10,3 +10,9 @@ python-box
 groq
 streamlit
 gradio
+faiss-cpu 
+langchain_community 
+rank_bm25
+tiktoken
+pypdf
+rapidocr-onnxruntime

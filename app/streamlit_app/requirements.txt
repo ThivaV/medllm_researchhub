@@ -1,2 +1,8 @@
 groq
 streamlit
+faiss-cpu 
+langchain_community 
+tiktoken 
+rank_bm25
+pypdf
+rapidocr-onnxruntime
